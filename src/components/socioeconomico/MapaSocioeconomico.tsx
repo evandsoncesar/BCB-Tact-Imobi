@@ -25,15 +25,15 @@ const choroplethLayer: LayerProps = {
 
 export default function MapaSocioeconomico() {
   const [viewState, setViewState] = useState({
-    longitude: -46.63,
-    latitude: -23.55,
+    longitude: -7.63,
+    latitude: -31.55,
     zoom: 8,
   });
 
   const [geojson, setGeojson] = useState<any>(null);
 
   useEffect(() => {
-    fetch('/data/municipios_sp.geojson')  // <-- Caminho correto
+    fetch(process.env.PUBLIC_URL + '/data/municipios_sp.geojson')  // <-- Caminho correto
       .then((res) => res.json())
       .then((data) => {
         console.log('GeoJSON carregado:', data);

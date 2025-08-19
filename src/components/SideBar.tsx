@@ -44,7 +44,7 @@ const Sidebar: React.FC = () => {
       <div className={`sidebar ${isOpen ? 'open' : 'closed'} ${isCollapsed ? 'collapsed' : ''}`}>
         <div className="logo-container" onClick={toggleCollapse}>
           <img
-            src="/logo.png"
+            src= {process.env.PUBLIC_URL + "/logo.png"}
             alt="Logo"
             className={`sidebar-logo ${isCollapsed ? 'collapsed-logo' : ''}`}
           />
