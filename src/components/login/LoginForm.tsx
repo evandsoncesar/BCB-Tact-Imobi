@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { Link } from "react-router-dom";
 
 export default function LoginForm() {
   const [email, setEmail] = useState("");
@@ -34,8 +35,8 @@ export default function LoginForm() {
       </div>
 
       <div className="login-options">
-        <a href="cadastro">1º acesso</a>
-        <a href="login/esqueciSenha">Esqueceu a senha?</a>
+        <Link to="/cadastro">1º acesso</Link>
+        <Link to="/esqueci-senha">Esqueceu a senha?</Link>
       </div>
 
       <button type="submit" className="login-button">

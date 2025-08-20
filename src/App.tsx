@@ -28,7 +28,7 @@ function App(): JSX.Element {
         <Route path="/planos" element={<Planos />} />
         <Route path="/configuracoes" element={<Configuracoes />} />
         <Route path="/login" element={<Login />} />
-        <Route path="/login/esqueciSenha" element={<EsqueciSenha />} />
+        <Route path="/esqueci-senha" element={<EsqueciSenha />} />
         <Route path="/cadastro" element={<Cadastro />} />
       </Routes>
     </Router>

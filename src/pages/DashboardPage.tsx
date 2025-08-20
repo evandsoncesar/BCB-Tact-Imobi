@@ -1,24 +1,31 @@
-import React from 'react';
-import Sidebar from '../components/SideBar';
-import CardIndicator from '../components/dashboardPages/CardIndicator';
-import CardIndicatorSecondary from '../components/dashboardPages/CardIndicatorSecondary';
-import CardVSO from '../components/dashboardPages/CardVSO';
-import CardVGV from '../components/dashboardPages/CardVGV';
-import { MapPin, Building2, Building, Globe, Hammer, BriefcaseBusiness } from 'lucide-react';
+import React from "react";
+import Sidebar from "../components/SideBar";
+import CardIndicator from "../components/dashboardPages/CardIndicator";
+import CardIndicatorSecondary from "../components/dashboardPages/CardIndicatorSecondary";
+import CardVSO from "../components/dashboardPages/CardVSO";
+import CardVGV from "../components/dashboardPages/CardVGV";
+import {
+  MapPin,
+  Building2,
+  Building,
+  Globe,
+  Hammer,
+  BriefcaseBusiness,
+} from "lucide-react";
 
-import PrecoMedioChart from '../components/dashboardPages/charts/PrecoMedioChart';
-import EvolucaoVendasChart from '../components/dashboardPages/charts/EvolucaoVendasChart';
-import GaugeCard from '../components/dashboardPages/charts/GaugeCArd';  // corrigido "GaugeCard"
-import EstoqueCidadeChart from '../components/dashboardPages/charts/EstoqueCidadeChart';
-import EstoqueTipologiaChart from '../components/dashboardPages/charts/EstoqueTipologiaChart';
-import EstoqueProdutoChart from '../components/dashboardPages/charts/EstoqueProdutoChart';
+import PrecoMedioChart from "../components/dashboardPages/charts/PrecoMedioChart";
+import EvolucaoVendasChart from "../components/dashboardPages/charts/EvolucaoVendasChart";
+import GaugeCard from "../components/dashboardPages/charts/GaugeCArd"; // corrigido "GaugeCard"
+import EstoqueCidadeChart from "../components/dashboardPages/charts/EstoqueCidadeChart";
+import EstoqueTipologiaChart from "../components/dashboardPages/charts/EstoqueTipologiaChart";
+import EstoqueProdutoChart from "../components/dashboardPages/charts/EstoqueProdutoChart";
 
-import '../styles/dashboardPagesStyle/CardIndicatorSecondary.css';
-import '../styles/dashboardPagesStyle/CardIndicator.css';
-import '../styles/dashboardPagesStyle/CardVSO.css';
-import '../styles/dashboardPagesStyle/DashboardPage.css';
-import '../styles/dashboardPagesStyle/Charts.css';
-import '../styles/dashboardPagesStyle/CardVGV.css';
+import "../styles/dashboardPagesStyle/CardIndicatorSecondary.css";
+import "../styles/dashboardPagesStyle/CardIndicator.css";
+import "../styles/dashboardPagesStyle/CardVSO.css";
+import "../styles/dashboardPagesStyle/DashboardPage.css";
+import "../styles/dashboardPagesStyle/Charts.css";
+import "../styles/dashboardPagesStyle/CardVGV.css";
 
 interface Indicador {
   title: string;
@@ -28,15 +35,19 @@ interface Indicador {
 }
 
 const indicadores: Indicador[] = [
-  { title: 'DÓLAR', value: 'R$5,72' },
-  { title: 'IPCC', value: '4,83%' },
-  { title: 'INCC', value: '0,51%' },
-  { title: 'SELIC', value: '13,25%' },
-  { title: 'Cidades Mapeadas', value: '14', icon: <MapPin size={'1.4vw'}/> },
-  { title: 'Unidades', value: '85k', icon: <Building size={'1.4vw'}/> },
-  { title: 'Construtoras', value: '32', icon: <Hammer size={'1.4vw'}/> },
-  { title: 'Empreendimentos', value: '15k', icon: <Building2 size={'1.4vw'}/> },
-  { title: 'VSO', value: '10%', icon: <BriefcaseBusiness size={'1.4vw'}/> },
+  { title: "DÓLAR", value: "R$5,72" },
+  { title: "IPCA", value: "4,83%" },
+  { title: "INCC", value: "0,51%" },
+  { title: "SELIC", value: "15,00%" },
+  { title: "Cidades Mapeadas", value: "14", icon: <MapPin size={"1.4vw"} /> },
+  { title: "Unidades", value: "85k", icon: <Building size={"1.4vw"} /> },
+  { title: "Construtoras", value: "32", icon: <Hammer size={"1.4vw"} /> },
+  {
+    title: "Empreendimentos",
+    value: "15k",
+    icon: <Building2 size={"1.4vw"} />,
+  },
+  { title: "VSO", value: "10%", icon: <BriefcaseBusiness size={"1.4vw"} /> },
 ];
 
 export default function DashboardPage() {
@@ -45,9 +56,16 @@ export default function DashboardPage() {
   const numeroRestantes = 400;
 
   return (
-    <div style={{ display: 'flex' }}>
+    <div style={{ display: "flex" }}>
       <Sidebar />
-      <div style={{ padding: 20, background: '#f5f5f5', minHeight: '100vh', flex: 1 }}>
+      <div
+        style={{
+          padding: 20,
+          background: "#f5f5f5",
+          minHeight: "100vh",
+          flex: 1,
+        }}
+      >
         <div className="dashboard-conteudo">
           {/* Bloco Esquerdo */}
           <div className="dashboard-esquerda">
@@ -63,9 +81,18 @@ export default function DashboardPage() {
                   {indicadores.slice(0, 4).map((item, index) => (
                     <div
                       key={index}
-                      style={{ display: 'flex', flexDirection: 'column', alignItems: 'center' }}
+                      style={{
+                        display: "flex",
+                        flexDirection: "column",
+                        alignItems: "center",
+                      }}
                     >
-                      <CardIndicator value={item.value} icon={item.icon} color="#29306A" title="" />
+                      <CardIndicator
+                        value={item.value}
+                        icon={item.icon}
+                        color="#29306A"
+                        title=""
+                      />
                       <div className="indicador-titulo">{item.title}</div>
                     </div>
                   ))}
@@ -91,11 +118,11 @@ export default function DashboardPage() {
 
           {/* Bloco Direito */}
           <div className="dashboard-direita">
-            <GaugeCard 
-              title="Índice de Velocidade de Vendas (IVV)" 
-              value={velocidadeDeVendas} 
-              vendidos={numeroVendidos} 
-              restantes={numeroRestantes} 
+            <GaugeCard
+              title="Índice de Velocidade de Vendas (IVV)"
+              value={velocidadeDeVendas}
+              vendidos={numeroVendidos}
+              restantes={numeroRestantes}
             />
           </div>
         </div>

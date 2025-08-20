@@ -6,13 +6,17 @@ export default function Cadastro() {
   return (
     <div className="cadastro-wrapper">
       <img
-        src="/background-cidade.svg"
+        src={process.env.PUBLIC_URL + "/background-cidade.svg"}
         alt="background"
         className="cadastro-bg"
       />
 
       <div className="cadastro-container">
-        <img src="/logotact.svg" alt="Logo" className="cadastro-logo" />
+        <img
+          src={process.env.PUBLIC_URL + "/logotact.svg"}
+          alt="Logo"
+          className="cadastro-logo"
+        />
         <CadastroForm />
       </div>
     </div>
