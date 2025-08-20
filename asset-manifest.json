@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/BCB-Tact-Imobi/static/css/main.83ba409a.css",
-    "main.js": "/BCB-Tact-Imobi/static/js/main.1a20c18d.js",
+    "main.js": "/BCB-Tact-Imobi/static/js/main.97ffa3a2.js",
     "static/js/879.095acf88.chunk.js": "/BCB-Tact-Imobi/static/js/879.095acf88.chunk.js",
     "static/js/453.16f9f63b.chunk.js": "/BCB-Tact-Imobi/static/js/453.16f9f63b.chunk.js",
     "static/media/slick.svg": "/BCB-Tact-Imobi/static/media/slick.2630a3e3eab21c607e21.svg",
@@ -10,12 +10,12 @@
     "static/media/slick.woff": "/BCB-Tact-Imobi/static/media/slick.295183786cd8a1389865.woff",
     "index.html": "/BCB-Tact-Imobi/index.html",
     "main.83ba409a.css.map": "/BCB-Tact-Imobi/static/css/main.83ba409a.css.map",
-    "main.1a20c18d.js.map": "/BCB-Tact-Imobi/static/js/main.1a20c18d.js.map",
+    "main.97ffa3a2.js.map": "/BCB-Tact-Imobi/static/js/main.97ffa3a2.js.map",
     "879.095acf88.chunk.js.map": "/BCB-Tact-Imobi/static/js/879.095acf88.chunk.js.map",
     "453.16f9f63b.chunk.js.map": "/BCB-Tact-Imobi/static/js/453.16f9f63b.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.83ba409a.css",
-    "static/js/main.1a20c18d.js"
+    "static/js/main.97ffa3a2.js"
   ]
 }
