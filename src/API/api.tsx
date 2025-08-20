@@ -65,6 +65,17 @@ export const regiao2 = [
     pib_per_capita: 4600,
     pop_ativa: 24000,
   },
+  {
+estado: 'Paraíba',
+    municipio: 'João Pessoa',
+    bairro: 'Centro',
+    populacao: 4500,
+    area_km2: 2.7,
+    idh: 0.82,
+    pib_milhoes: 100,
+    pib_per_capita: 460,
+    pop_ativa: 80000,
+  },
 ];
 
 export const fakeEmpreendimentos = [
@@ -75,9 +86,9 @@ export const fakeEmpreendimentos = [
     cidade: 'Recife',
     preco: 'R$680.000',
     fotos: [
-      '/apartamento.jpg',
-      '/ap1.jpg',
-      '/ap2.jpg',
+      process.env.PUBLIC_URL + '/apartamento.jpg',
+      process.env.PUBLIC_URL + '/ap1.jpg',
+      process.env.PUBLIC_URL + '/ap2.jpg',
     ],
     area: 60,
     quartos: 2,

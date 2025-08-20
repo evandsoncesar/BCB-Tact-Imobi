@@ -1,5 +1,5 @@
-import React, { useState, useEffect } from 'react';
-import '../../styles/socioeconomicoStyle/InfoResumo.css';
+import React, { useState, useEffect } from "react";
+import "../../styles/socioeconomicoStyle/InfoResumo.css";
 import {
   UsersRound,
   LandPlot,
@@ -7,8 +7,8 @@ import {
   MapPin,
   CircleDollarSign,
   HandCoins,
-  Info
-} from 'lucide-react';
+  Info,
+} from "lucide-react";
 
 interface InfoCard {
   titulo: string;
@@ -26,42 +26,80 @@ interface FiltrosProps {
 }
 
 const dadosPorMunicipio: Record<string, InfoCard[]> = {
-  'São Paulo': [
+  "São Paulo": [
     {
-      titulo: 'População Total',
-      valor: '12.325.232 Hab.',
+      titulo: "População Total",
+      valor: "12.325.232 Hab.",
       icone: <UsersRound />,
-      descricao: 'Número total de habitantes do município.'
+      descricao: "Número total de habitantes do município.",
     },
     {
-      titulo: 'Área Total',
-      valor: '1.521 km²',
+      titulo: "Área Total",
+      valor: "1.521 km²",
       icone: <LandPlot />,
-      descricao: 'Tamanho total da área geográfica da cidade.'
+      descricao: "Tamanho total da área geográfica da cidade.",
     },
     {
-      titulo: 'IDH',
-      valor: '0,805',
+      titulo: "IDH",
+      valor: "0,805",
       icone: <TrendingUp />,
-      descricao: 'Índice de Desenvolvimento Humano.'
+      descricao: "Índice de Desenvolvimento Humano.",
     },
     {
-      titulo: 'PIB (Milhões)',
-      valor: 'R$ 803.000,00',
+      titulo: "PIB (Milhões)",
+      valor: "R$ 803.000,00",
       icone: <CircleDollarSign />,
-      descricao: 'Produto Interno Bruto total.'
+      descricao: "Produto Interno Bruto total.",
     },
     {
-      titulo: 'PIB per capita',
-      valor: 'R$ 65.000,00',
+      titulo: "PIB per capita",
+      valor: "R$ 65.000,00",
       icone: <MapPin />,
-      descricao: 'PIB dividido pela população.'
+      descricao: "PIB dividido pela população.",
     },
     {
-      titulo: 'Pop. Economicamente Ativa',
-      valor: '6.000.000 (49%)',
+      titulo: "Pop. Economicamente Ativa",
+      valor: "6.000.000 (49%)",
       icone: <HandCoins />,
-      descricao: 'População ativa empregada.'
+      descricao: "População ativa empregada.",
+    },
+  ],
+  "João Pessoa": [
+    {
+      titulo: "População Total",
+      valor: "888.232 Hab.",
+      icone: <UsersRound />,
+      descricao: "Número total de habitantes do município.",
+    },
+    {
+      titulo: "Área Total",
+      valor: "210 km²",
+      icone: <LandPlot />,
+      descricao: "Tamanho total da área geográfica da cidade.",
+    },
+    {
+      titulo: "IDH",
+      valor: "0,763",
+      icone: <TrendingUp />,
+      descricao: "Índice de Desenvolvimento Humano.",
+    },
+    {
+      titulo: "PIB (Milhões)",
+      valor: "R$ 22.000,00",
+      icone: <CircleDollarSign />,
+      descricao: "Produto Interno Bruto total.",
+    },
+    {
+      titulo: "PIB per capita",
+      valor: "R$ 27.000,00",
+      icone: <MapPin />,
+      descricao: "PIB dividido pela população.",
+    },
+    {
+      titulo: "Pop. Economicamente Ativa",
+      valor: "514.000 (57%)",
+      icone: <HandCoins />,
+      descricao: "População ativa empregada.",
     },
   ],
 };
@@ -70,7 +108,7 @@ const InfoResumo: React.FC<FiltrosProps> = ({ filtros }) => {
   const [cards, setCards] = useState<InfoCard[]>([]);
   const [popup, setPopup] = useState<{ visible: boolean; label: string }>({
     visible: false,
-    label: '',
+    label: "",
   });
 
   useEffect(() => {
@@ -90,11 +128,13 @@ const InfoResumo: React.FC<FiltrosProps> = ({ filtros }) => {
   };
 
   const fecharPopup = () => {
-    setPopup({ visible: false, label: '' });
+    setPopup({ visible: false, label: "" });
   };
 
   if (!filtros || !filtros.municipio) {
-    return <p className="info-msg">Selecione um município para ver os dados.</p>;
+    return (
+      <p className="info-msg">Selecione um município para ver os dados.</p>
+    );
   }
 
   return (
@@ -124,7 +164,7 @@ const InfoResumo: React.FC<FiltrosProps> = ({ filtros }) => {
       {/* Pop-up de explicação (mesmo estilo do DadosCarrossel) */}
       {popup.visible && (
         <div className="info-popup-overlay" onClick={fecharPopup}>
-          <div className="info-popup" onClick={e => e.stopPropagation()}>
+          <div className="info-popup" onClick={(e) => e.stopPropagation()}>
             <h4>Explicação</h4>
             <p>{popup.label}</p>
             <button onClick={fecharPopup}>Fechar</button>
